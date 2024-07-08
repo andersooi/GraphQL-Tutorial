@@ -12,13 +12,17 @@ export const typeDefs = `#graphql
     type Author {
         id: ID!
         name: String!
-        reviews: Boolean!
+        verified: Boolean!
     }
     # main query type
     type Query {
         reviews: [Review]
+        # create entry point for reviews
+        review(id: ID!): Review
         games: [Game]
+        game(id: ID!): Game
         authors: [Author]
+        author(id: ID!): Author
     }
 `
 
